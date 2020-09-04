@@ -59,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("TAG_", operation + "");
                 tvResult.setText((operation + "").replace(".0", ""));
             }
+        }else if(v.getId() == R.id.btnDot){
+            if (tvResult.getText().length() < 10){
+                if (tvResult.getText().equals("+")|| tvResult.getText().equals("-")|| tvResult.getText().equals("*") || tvResult.getText().equals("/")){
+                    result = ((Button)v).getText().toString();
+                    tvResult.setText(result);
+                }else{
+                    result = result + ((Button)v).getText().toString();
+                    tvResult.setText(result);
+                }
+            }
         }else{
             if (tvResult.getText().length() < 10){
                 if (tvResult.getText().equals("+")|| tvResult.getText().equals("-")|| tvResult.getText().equals("*") || tvResult.getText().equals("/") || tvResult.getText().equals("0")){
