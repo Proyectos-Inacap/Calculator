@@ -25,75 +25,50 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickBtn(View v){
         result = tvResult.getText().toString();
-
-        switch (v.getId()){
-            case R.id.btnErase:
-                result = "";
+        if (v.getId() == R.id.btnSum || v.getId() == R.id.btnSubtraction || v.getId() == R.id.btnMultiplication || v.getId() == R.id.btnDivision){
+            if (tvResult.getText().length() > 0){
+                num1 = result;
+                operator = ((Button)v).getText().toString();
+                tvResult.setText(operator);
+            }
+        }else if (v.getId() == R.id.btnDelete){
+            if (tvResult.getText().length() > 0){
+                result = result.substring(0, result.length()-1);
                 tvResult.setText(result);
-                break;
-            case R.id.btnDelete:
-                if (tvResult.getText().length() > 0){
-                    result = result.substring(0, result.length()-1);
+            }
+        }else if (v.getId() == R.id.btnEraseAll){
+            result = "";
+            tvResult.setText(result);
+        }else if (v.getId() == R.id.btnDelete){
+            if (tvResult.getText().length() > 0){
+                result = result.substring(0, result.length()-1);
+                tvResult.setText(result);
+            }
+        }else if (v.getId() == R.id.btnEqual){
+            if (tvResult.getText().length() > 0){
+                num2 = result;
+                if (operator.equals("+")){
+                    operation = Double.parseDouble(num1) + Double.parseDouble(num2);
+                }else if(operator.equals("-")){
+                    operation = Double.parseDouble(num1) - Double.parseDouble(num2);
+                }else if(operator.equals("*")){
+                    operation = Double.parseDouble(num1) * Double.parseDouble(num2);
+                }else if(operator.equals("/")){
+                    operation = Double.parseDouble(num1) / Double.parseDouble(num2);
+                }
+                Log.d("TAG_", operation + "");
+                tvResult.setText((operation + "").replace(".0", ""));
+            }
+        }else{
+            if (tvResult.getText().length() < 10){
+                if (tvResult.getText().equals("+")|| tvResult.getText().equals("-")|| tvResult.getText().equals("*") || tvResult.getText().equals("/") || tvResult.getText().equals("0")){
+                    result = ((Button)v).getText().toString();
+                    tvResult.setText(result);
+                }else{
+                    result = result + ((Button)v).getText().toString();
                     tvResult.setText(result);
                 }
-                break;
-            case R.id.btnSum:
-                if (tvResult.getText().length() > 0){
-                    num1 = result;
-                    operator = ((Button)v).getText().toString();
-                    tvResult.setText(operator);
-                }
-                break;
-            case R.id.btnSubtraction:
-                if (tvResult.getText().length() > 0){
-                    num1 = result;
-                    operator = ((Button)v).getText().toString();
-                    tvResult.setText(operator);
-                }
-                break;
-            case R.id.btnMultiplication:
-                if (tvResult.getText().length() > 0){
-                    num1 = result;
-                    operator = ((Button)v).getText().toString();
-                    tvResult.setText(operator);
-                }
-                break;
-            case R.id.btnDivision:
-                if (tvResult.getText().length() > 0){
-                    num1 = result;
-                    operator = ((Button)v).getText().toString();
-                    tvResult.setText(operator);
-                }
-                break;
-            case R.id.btnEqual:
-                if (tvResult.getText().length() > 0){
-                    num2 = result;
-                    if (operator.equals("+")){
-                        operation = Double.parseDouble(num1) + Double.parseDouble(num2);
-                    }else if(operator.equals("-")){
-                        operation = Double.parseDouble(num1) - Double.parseDouble(num2);
-                    }else if(operator.equals("*")){
-                        operation = Double.parseDouble(num1) * Double.parseDouble(num2);
-                    }else if(operator.equals("/")){
-                        operation = Double.parseDouble(num1) / Double.parseDouble(num2);
-                    }
-                    Log.d("TAG_", operation + "");
-                    tvResult.setText((operation + "").replace(".0", ""));
-                }
-                break;
-            default:
-                if (tvResult.getText().length() < 10){
-                    if (tvResult.getText().equals("+")|| tvResult.getText().equals("-")|| tvResult.getText().equals("*") || tvResult.getText().equals("/") || tvResult.getText().equals("0")){
-                        result = ((Button)v).getText().toString();
-                        tvResult.setText(result);
-                    }else{
-                        result = result + ((Button)v).getText().toString();
-                        tvResult.setText(result);
-                    }
-                }
-                break;
+            }
         }
-
-
     }
 }

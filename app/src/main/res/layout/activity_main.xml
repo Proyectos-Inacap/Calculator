@@ -115,7 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnDivision" />
 
     <Button
-        android:id="@+id/btnErase"
+        android:id="@+id/btnEraseAll"
         android:layout_width="80dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
