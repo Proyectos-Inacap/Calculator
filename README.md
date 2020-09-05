@@ -1,2 +1,2 @@
-# calculator
+# Calculator
 Proyecto app móviles Inacap
