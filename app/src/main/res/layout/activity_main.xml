@@ -19,7 +19,7 @@
         android:textColor="#fff"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/btn7"
-        app:layout_constraintStart_toStartOf="@+id/btn1" />
+        app:layout_constraintStart_toStartOf="@+id/btn7" />
 
     <Button
         android:id="@+id/btn5"
@@ -58,7 +58,7 @@
         android:textColor="#fff"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/btnDot"
-        app:layout_constraintStart_toStartOf="@+id/btn4" />
+        app:layout_constraintStart_toStartOf="@+id/btnDot" />
 
     <Button
         android:id="@+id/btn0"
@@ -77,6 +77,7 @@
         android:id="@+id/btnDot"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/bg_gray_rounded"
         android:onClick="clickBtn"
@@ -84,7 +85,7 @@
         android:textColor="#fff"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btn7" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnDelete"
@@ -97,6 +98,7 @@
         android:textColor="#fff"
         android:textSize="30dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn0"
+        app:layout_constraintEnd_toStartOf="@+id/btnEraseAll"
         app:layout_constraintStart_toEndOf="@+id/btn0" />
 
     <Button
@@ -120,12 +122,14 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/bg_red_rounded"
         android:onClick="clickBtn"
         android:text="AC"
         android:textColor="#fff"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/btnDelete"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn9"
         app:layout_constraintTop_toBottomOf="@+id/btnEqual" />
 
@@ -166,7 +170,7 @@
         android:textColor="#fff"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/btn4"
-        app:layout_constraintStart_toStartOf="@+id/btnSum" />
+        app:layout_constraintStart_toStartOf="@+id/btn4" />
 
     <Button
         android:id="@+id/btn3"
@@ -198,14 +202,13 @@
         android:id="@+id/btnSum"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="32dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/bg_gold_rounded"
         android:onClick="clickBtn"
         android:text="+"
         android:textSize="35dp"
         app:layout_constraintBottom_toTopOf="@+id/btn1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/btn1" />
 
     <Button
         android:id="@+id/btnSubtraction"
@@ -236,14 +239,11 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/bg_gold_rounded"
         android:onClick="clickBtn"
         android:text="/"
         android:textSize="35dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnMultiplication"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnMultiplication" />
 
     <TextView

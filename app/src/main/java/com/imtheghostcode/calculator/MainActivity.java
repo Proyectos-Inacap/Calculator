@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 }else if(operator.equals("/")){
                     operation = Double.parseDouble(num1) / Double.parseDouble(num2);
                 }
-                Log.d("TAG_", operation + "");
                 tvResult.setText((operation + "").replace(".0", ""));
             }
         }else if(v.getId() == R.id.btnDot){
